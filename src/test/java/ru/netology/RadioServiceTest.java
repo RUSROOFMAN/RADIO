@@ -14,23 +14,6 @@ public class RadioServiceTest {
     }
 
     @Test
-    public void setNextStation(){
-        Radio radio = new Radio();
-        radio.setNextStation(2);
-        int expected = 3;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected,actual);
-    }
-    @Test
-    public void setNextStationMoreNine(){
-        Radio radio = new Radio();
-        radio.setNextStation(9);
-        int expected = 0;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected,actual);
-    }
-
-    @Test
     public void setNextRadioStationMoreNine() {
         Radio radio = new Radio();
         radio.setCurrentStation(10);
@@ -47,16 +30,6 @@ public class RadioServiceTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-
-    @Test
-    public void setPrevRadioStation() {
-        Radio radio = new Radio();
-        radio.setPrevRadioStation(9);
-        int expected = 8;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
-
     @Test
     public void setNextRadioStationInZero() {
         Radio radio = new Radio();
@@ -65,15 +38,7 @@ public class RadioServiceTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-    @Test
-    public void setPrevRadioStationMinOne() {
-        Radio radio = new Radio();
-        radio.setPrevRadioStation(-1);
-        int expected = 9;
-        int actual = radio.getCurrentStation();
-        Assertions.assertEquals(expected, actual);
-    }
-    @Test
+
     public void setNextMaxVolumeMore100() {
         Radio radio = new Radio();
         radio.setCurrentVolume(101);
@@ -122,6 +87,14 @@ public class RadioServiceTest {
         Radio radio = new Radio();
         radio.setMaxVolume(101);
         int expected = 100;
+        int actual = radio.getCurrentVolume();
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    public void setVolumeMore100() {
+        Radio radio = new Radio();
+        radio.setCurrentVolume(101);
+        int expected = 0;
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected,actual);
     }

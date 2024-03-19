@@ -35,24 +35,6 @@ public class Radio {
         currentStation = newCurrentVolume;
     }
 
-    public void setNextStation(int newSetNextStation) {               //Увелич.станции
-        if (newSetNextStation < 9)
-
-            currentStation = newSetNextStation + 1;
-        else {
-            currentStation = 0;
-        }
-    }
-
-    public void setPrevRadioStation(int newSetPrevRadioStation) {       //Уменьш.станции
-        if (newSetPrevRadioStation > 0) {
-
-            currentStation = newSetPrevRadioStation - 1;
-        } else {
-            currentStation = newSetPrevRadioStation = 9;
-        }
-    }
-
     public void setMaxVolume(int newSetMaxVolume) {
         if (newSetMaxVolume > 100) {
             newSetMaxVolume = 100;
