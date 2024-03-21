@@ -13,43 +13,50 @@ public class Radio {
         return currentStation;
     }
 
-    public void setCurrentStation(int newCurrentStation) {
+    public void setNextStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
             return;
-
+        }
+        if (newCurrentStation > 0) {
+            currentStation = newCurrentStation;
+        }
+        if (newCurrentStation < 9) {
+            newCurrentStation = currentStation;
         }
         if (newCurrentStation > 9) {
-            return;
+            newCurrentStation = 0;
         }
         currentStation = newCurrentStation;
     }
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume < 0) {
-            return;
-
-        }
-        if (newCurrentVolume > 100) {
+    public void setPrevStation(int newCurrentStation) {
+        if (newCurrentStation < 0) {
             return;
         }
-        currentStation = newCurrentVolume;
+        if (newCurrentStation > 0) {
+            currentStation = newCurrentStation ;
+        }
+        if (newCurrentStation < 9) {
+            newCurrentStation = currentStation;
+        }
+        if (newCurrentStation > 9) {
+            newCurrentStation = 0;
+        }
+        currentStation = newCurrentStation;
     }
 
-    public void setMaxVolume(int newSetMaxVolume) {
-        if (newSetMaxVolume > 100) {
-            newSetMaxVolume = 100;
+    public void setVolume(int newSetVolume) {
+        if (newSetVolume > 100) {
+            newSetVolume = 100;
         }
-        if (newSetMaxVolume > 0) {                    // максимум звук
-            currentVolume = newSetMaxVolume;
+        if (newSetVolume < 0) {
+            newSetVolume = 0;
         }
-    }
-
-    public void setMinVolume(int newSetMinVolume) {
-        if (newSetMinVolume > 100) {
-            return;
+        if (newSetVolume > 0) {
+            currentVolume = newSetVolume;
         }
-        if (newSetMinVolume > 0) {
-            currentVolume = newSetMinVolume;         //минимум звук
+        if (newSetVolume < 100) {
+            currentStation = newSetVolume;
         }
     }
 }
