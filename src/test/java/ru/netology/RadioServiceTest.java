@@ -12,7 +12,6 @@ public class RadioServiceTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @Test
     public void setNextRadioStationMoreNine() {
         Radio radio = new Radio();
@@ -21,7 +20,6 @@ public class RadioServiceTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @Test
     public void setNextRadioStationMoreZero() {
         Radio radio = new Radio();
@@ -40,7 +38,6 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
     }
 
-
     @Test
     public void setNextRadioStationLessNine() {
         Radio radio = new Radio();
@@ -49,7 +46,6 @@ public class RadioServiceTest {
         int actual = radio.getCurrentStation();
         Assertions.assertEquals(expected, actual);
     }
-
     @Test
     public void setPrevRadioStationLessZero() {
         Radio radio = new Radio();
@@ -104,7 +100,6 @@ public class RadioServiceTest {
         Assertions.assertEquals(expected, actual);
         ;
     }
-
     @Test
     public void setVolumeLessZero() {
         Radio radio = new Radio();
