@@ -34,7 +34,7 @@ public class Radio {
             return;
         }
         if (newCurrentStation > 0) {
-            currentStation = newCurrentStation ;
+            currentStation = newCurrentStation;
         }
         if (newCurrentStation < 9) {
             newCurrentStation = currentStation;
