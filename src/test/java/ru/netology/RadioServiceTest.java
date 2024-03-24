@@ -5,23 +5,19 @@ import org.junit.jupiter.api.Test;
 
 public class RadioServiceTest {
     @Test
-    public void shouldSetCurrentStationTestManual() {
-        Radio rad = new Radio(20, 0, 19, 100, 0);
-        Assertions.assertEquals(20, rad.getQuantityRadioStance());
-        Assertions.assertEquals(0, rad.getMinStation());
-        Assertions.assertEquals(19, rad.getMaxStation());
-        Assertions.assertEquals(100, rad.getMaxVolume());
-        Assertions.assertEquals(0, rad.getMinVolume());
-    }
+    public  void setCountOfStation18() {
+        Radio radio = new Radio(18);
 
+        Assertions.assertEquals(18, radio.getCountStation());
+        Assertions.assertEquals(0, radio.getMinStation());
+        Assertions.assertEquals(9, radio.getMaxStation());
+        Assertions.assertEquals(0, radio.getCurrentStation());
+    }
     @Test
-    public void shouldSetCurrentStationTestAuto() {
-        Radio rad = new Radio();
-        Assertions.assertEquals(10, rad.getQuantityRadioStance());
-        Assertions.assertEquals(0, rad.getMinStation());
-        Assertions.assertEquals(9, rad.getMaxStation());
-        Assertions.assertEquals(100, rad.getMaxVolume());
-        Assertions.assertEquals(0, rad.getMinVolume());
+    public  void countOfStationNotSetted() {
+        Radio radio = new Radio();
+
+        Assertions.assertEquals(10, radio.getCountStation());
     }
     @Test
     public void shouldSetCurrentStation() {
